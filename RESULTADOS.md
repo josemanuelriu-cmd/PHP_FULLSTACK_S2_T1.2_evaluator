@@ -2,60 +2,60 @@
 
 
 ## 📈 Resumen
-✅ 9 correctas de 16 queries
+✅ 10 correctas de 18 queries
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.40 ms
+⏱ Tiempo: 0.41 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.27 ms
+⏱ Tiempo: 0.29 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.29 ms
+⏱ Tiempo: 0.28 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.28 ms
+⏱ Tiempo: 0.27 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.29 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -83,8 +83,8 @@
  2.00
 ```
 
-⏱ Tiempo: 0.33 ms
-✅ Se usó índice(s) en la consulta: codigo_fabricante, PRIMARY
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, codigo_fabricante
 
 ---
 
@@ -101,7 +101,7 @@
 ```
 
 ⏱ Tiempo: 0.31 ms
-✅ Se usó índice(s) en la consulta: codigo_fabricante, PRIMARY
+✅ Se usó índice(s) en la consulta: PRIMARY, codigo_fabricante
 
 ---
 
@@ -117,6 +117,17 @@
 - **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASC(nombre) FROM fabricante UNION SELECT  DEC(nombre) FROM fabricante' at line 2
 
 
-## ❌ Query 16: Error
+## ✅ Query 16: Correcto
+
+⏱ Tiempo: 0.29 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
+
+## ❌ Query 17: Error
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE num_fila >= 2' at line 2
+
+
+## ❌ Query 18: Error
 - **Descripción**: 'NoneType' object is not iterable
 
