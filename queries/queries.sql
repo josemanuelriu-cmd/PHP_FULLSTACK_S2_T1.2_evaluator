@@ -41,7 +41,7 @@ SELECT nombre FROM fabricante ORDER BY nombre ASC;
 SELECT  nombre FROM fabricante ORDER BY nombre DESC;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
-SELECT nombre, precio FROM producto ORDER BY nombre ASC UNION SELECT nombre, precio FROM producto ORDER BY nombre DESC;
+SELECT nombre, precio FROM producto UNION SELECT nombre, precio FROM producto ORDER BY nombre ASC;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
 SELECT codigo, nombre FROM fabricante LIMIT 5;
