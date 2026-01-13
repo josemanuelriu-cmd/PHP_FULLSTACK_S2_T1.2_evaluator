@@ -44,10 +44,10 @@ SELECT  DEC(nombre) FROM fabricante;
 SELECT ASC(nombre) FROM fabricante UNION SELECT  DEC(nombre) FROM fabricante;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
-
+SELECT codigo, nombre FROM fabricante LIMIT 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
-
+SELECT codigo, nombre FROM fabricante LIMIT 2 WHERE num_fila >= 2;
 
 -- 18. Llista el nom i el preu del producte més barat. (Utilitza solament les clàusules ORDER BY i LIMIT).
 
