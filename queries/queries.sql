@@ -26,22 +26,22 @@ SELECT nombre, UPPER(LEFT(nombre,2)) as iniciales FROM fabricante;
 SELECT nombre, ROUND(precio,0) as precio FROM producto;
 
 -- 10. Llista els noms i els preus de tots els productes (precio truncado) de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
-SELECT nombre, TRUNCATE(precio) as `precio truncado` FROM producto;
+SELECT nombre, TRUNCATE(precio,2) as `precio truncado` FROM producto;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
-SELECT f.codigo FROM fabricante f INNER JOIN producto p ON p.codigo_fabricante=f.codigo;
+SELECT p.codigo_fabricante FROM producto p;
 
 -- 12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
-SELECT DISTINCT f.codigo FROM fabricante f INNER JOIN producto p ON p.codigo_fabricante=f.codigo;
+SELECT DISTINCT  p.codigo_fabricante FROM producto p;
 
 -- 13. Llista els noms dels fabricants ordenats de manera ascendent
-SELECT ASC(nombre) FROM fabricante;
+SELECT nombre FROM fabricante ORDER BY nombre ASC;
 
 -- 14. Llista els noms dels fabricants ordenats de manera descendent
-SELECT  DEC(nombre) FROM fabricante;
+SELECT  nombre FROM fabricante ORDER BY nombre DESC;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
-SELECT ASC(nombre) FROM fabricante UNION SELECT  DEC(nombre) FROM fabricante;
+SELECT nombre FROM fabricante ORDER BY nombre ASC UNION SELECT nombre FROM fabricante ORDER BY nombre DESC;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
 SELECT codigo, nombre FROM fabricante LIMIT 5;
