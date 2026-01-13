@@ -26,7 +26,7 @@ SELECT nombre, UPPER(LEFT(nombre,2)) as iniciales FROM fabricante;
 SELECT nombre, ROUND(precio,0) as precio FROM producto;
 
 -- 10. Llista els noms i els preus de tots els productes (precio truncado) de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
-SELECT nombre, TRUNCATE(precio,2) as `precio truncado` FROM producto;
+SELECT nombre, TRUNCATE(precio,0) as `precio truncado` FROM producto;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
 SELECT p.codigo_fabricante FROM producto p;
@@ -41,13 +41,13 @@ SELECT nombre FROM fabricante ORDER BY nombre ASC;
 SELECT  nombre FROM fabricante ORDER BY nombre DESC;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
-SELECT nombre FROM fabricante ORDER BY nombre ASC UNION SELECT nombre FROM fabricante ORDER BY nombre DESC;
+SELECT nombre, precio FROM producto ORDER BY nombre ASC UNION SELECT nombre, precio FROM producto ORDER BY nombre DESC;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
 SELECT codigo, nombre FROM fabricante LIMIT 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
-SELECT codigo, nombre FROM fabricante LIMIT 2 WHERE num_fila >= 2;
+SELECT codigo, nombre FROM fabricante LIMIT 2 WHERE num_fila >= 4;
 
 -- 18. Llista el nom i el preu del producte més barat. (Utilitza solament les clàusules ORDER BY i LIMIT).
 
