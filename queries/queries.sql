@@ -68,7 +68,7 @@ SELECT p.nombre, p.precio, f.nombre as 'nombre del fabricante' FROM producto p J
 SELECT p.codigo, p.nombre, f.codigo as 'codigo fabricante' , f.nombre as 'nombre fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante;
 
 -- 24. Retorna el nom, el preu i el nom del fabricant (fabricante), del producte més barat.
-SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante ORDER BY p.precio ASC LIMIT 1;
+SELECT p.nombre, p.precio, f.nombre as 'fabricant' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante ORDER BY p.precio ASC LIMIT 1;
 
 -- 25. Retorna el nom del producte, el preu i el nom del seu fabricant (fabricante), del producte més car.
 SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante ORDER BY p.precio DESC LIMIT 1;
@@ -77,10 +77,10 @@ SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabrica
 SELECT p.nombre, p.precio FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante WHERE f.nombre='Lenovo';
 
 -- 27. Retorna una llista amb nom i preu de tots els productes del fabricant Crucial que tinguin un preu major que 200 €
-SELECT p.nombre, p.precio FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante
+SELECT p.nombre, p.precio FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante WHERE f.nombre='Crucial' and p.precio>200;
 
 -- 28. Retorna un llistat amb nom, preu i nom del fabricant (fabricante) de tots els productes dels fabricants Asus, Hewlett-Packard i Seagate. Sense utilitzar l'operador IN.
-SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante
+SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante WHERE f.nombre='Asus' OR f.nombre='Hewlett-Packard' OR f.nombre='Seagate';
 
 -- 29. Retorna un llistat amb nom, preu i nom del fabricant (fabricante) de tots els productes dels fabricants Asus, Hewlett-Packard i Seagate. Fent servir l'operador IN.
 SELECT p.nombre, p.precio, f.nombre as 'fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante
