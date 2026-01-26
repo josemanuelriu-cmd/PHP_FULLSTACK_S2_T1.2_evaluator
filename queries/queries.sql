@@ -62,7 +62,7 @@ SELECT nombre FROM producto WHERE codigo_fabricante=2;
 SELECT p.nombre, p.precio, f.nombre as 'nombre del fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante;
 
 -- 22. Llista tots els productes amb nom, preu i nom del fabricant (nombre del fabricante) ordenats alfabèticament.
-SELECT p.nombre, p.precio, f.nombre as 'nombre del fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante ORDER BY p.nombre ASC;
+SELECT p.nombre, p.precio, f.nombre as 'nombre del fabricante' FROM producto p JOIN fabricante f ON f.codigo=p.codigo_fabricante ORDER BY f.nombre ASC;
 
 -- 23. Retorna una llista amb el codi del producte, nom del producte, codi del fabricant (codigo fabricante) i nom del fabricant (nombre fabricante), de tots els productes de la base de dades.
 
