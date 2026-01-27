@@ -5,7 +5,7 @@ SELECT nombre FROM producto;
 SELECT nombre, precio FROM producto;
 
 -- 3. Llista totes les columnes de la taula producto.
-SELECT codigo, nombre, precio, codigo_fabricante FROM producto;
+SELECT * FROM producto;
 
 -- 4. Llista el nom dels productes, el preu en euros (precio_eur) i el preu en dòlars estatunidencs (precio_usd) amb un tipus de canvi de 1 € = 1 $.
 SELECT nombre, precio as precio_eur, precio as precio_usd  FROM producto;
@@ -41,13 +41,13 @@ SELECT nombre FROM fabricante ORDER BY nombre ASC;
 SELECT  nombre FROM fabricante ORDER BY nombre DESC;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
-SELECT nombre, precio FROM producto UNION SELECT nombre, precio FROM producto ORDER BY nombre ASC;
+SELECT nombre, precio FROM producto ORDER BY nombre ASC, precio DESC;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
 SELECT codigo, nombre FROM fabricante LIMIT 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
-SELECT codigo, nombre FROM fabricante WHERE codigo >= 4 LIMIT 2;
+SELECT codigo, nombre FROM fabricante LIMIT 2 OFFSET 3;
 
 -- 18. Llista el nom i el preu del producte més barat. (Utilitza solament les clàusules ORDER BY i LIMIT).
 SELECT nombre, precio FROM producto ORDER BY precio ASC LIMIT 1;
